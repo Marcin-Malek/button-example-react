@@ -2,43 +2,46 @@ import { useCallback, useState } from "react"
 import { Button, Label } from "./styled";
 
 export const IntensitySwitch = ({ title, lightIcon, moderateIcon, heavyIcon }) => {
-    const [intensity, setIntensity] = useState("off");
+    const [intensity, setIntensity] = useState("Off");
 
     const switchCallback = useCallback(() => {
         switch (intensity) {
-            case ("off"):
-                return (<Button onClick={() => setIntensity("light")}>
+            case ("Off"):
+                return (<Button onClick={() => setIntensity("Light")}>
                     {heavyIcon}
                     <Label>{intensity}</Label>
-                </Button>);
-            case ("light"):
+                </Button>
+                );
+            case ("Light"):
                 return (
-                    <Button onClick={() => setIntensity("moderate")} active>
+                    <Button onClick={() => setIntensity("Moderate")} active>
                         {lightIcon}
                         <Label>{intensity}</Label>
                     </Button>
                 );
-            case ("moderate"):
+            case ("Moderate"):
                 return (
-                    <Button onClick={() => setIntensity("heavy")} active>
+                    <Button onClick={() => setIntensity("Heavy")} active>
                         {moderateIcon}
                         <Label>{intensity}</Label>
                     </Button>
                 );
-            case ("heavy"):
+            case ("Heavy"):
                 return (
-                    <Button onClick={() => setIntensity("off")} active>
+                    <Button onClick={() => setIntensity("Off")} active>
                         {heavyIcon}
                         <Label>{intensity}</Label>
                     </Button>
                 );
             default:
-                return (<Button onClick={() => setIntensity("light")}>
+                return (<Button onClick={() => setIntensity("Light")}>
                     {heavyIcon}
                     <Label>{intensity}</Label>
-                </Button>);
+                </Button>
+                );
         }
-    }, [intensity, lightIcon, moderateIcon, heavyIcon])
+    }, [intensity, lightIcon, moderateIcon, heavyIcon]);
+
     return (
         <>
             <Label>{title}</Label>
