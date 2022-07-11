@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Label = styled.span`
-    font-size: 15px;
+    font-family: sans-serif;
+    font-size: 16px;
     font-weight: 600;
     color: white;
 `;
@@ -15,7 +16,7 @@ export const Button = styled.button`
     margin: 5px 0;
     flex-direction: column;
     background-color: black;
-    border-radius: 5px;
+    border-radius: 10px;
     color: ${({ active }) => active ? "white" : "gray"};
     border: ${({ active }) => active && "2px solid"};
     align-items: flex-start;
@@ -24,8 +25,8 @@ export const Button = styled.button`
 
     & svg {
         align-self: center;
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
     }
 
     & path {
